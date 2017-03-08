@@ -8,7 +8,7 @@ ACCESS_TOKEN_SECRET = 'Lx13f9mEdJuneYqt2aKTBeb3myfJRpCbuEWiQOjzVxutJ'
 
 twitter = Twython(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
-search = twitter.search(q='YOUR SEARCH TERM HERE', count="100")
+search = twitter.search(q='Lucky Charms', count="100")
 tweets = search['statuses']
 
 with open ('data.csv', 'w') as fp:
@@ -21,5 +21,5 @@ with open ('data.csv', 'w') as fp:
             url = result['entities']['urls'][0]['expanded_url']
         except:
             url = None
-        text=[['lucky charms', result['text'].encode('utf-8'), url]]
+        text=[['Lucky Charms', result['text'].encode('utf-8'), url]]
         a.writerows((text))
